@@ -1,0 +1,105 @@
+function RecentPostsScrollerv2(json) 
+{
+			var sHeadLines;
+			var sPostURL;
+			var objPost;
+			var sMoqueeHTMLStart;
+			var sMoqueeHTMLEnd;
+			var sPoweredBy;
+			var sHeadlineTerminator;
+			var sPostLinkLocation;
+			
+			
+			try
+			{			
+			
+			sMoqueeHTMLStart = "\<MARQUEE onmouseover=\"this.stop();\" onmouseout=\"this.start();\" ";			
+			
+			
+			if( nWidth)
+			{
+				sMoqueeHTMLStart = sMoqueeHTMLStart + " width = \"" + nWidth + "%\"";
+			}
+			else
+			{
+				sMoqueeHTMLStart = sMoqueeHTMLStart + " width = \"100%\"";
+			}
+
+			if( nScrollDelay)
+			{
+				sMoqueeHTMLStart = sMoqueeHTMLStart + " scrolldelay = \"" + nScrollDelay + "\"";
+			}
+			if(sDirection)
+			{
+				sMoqueeHTMLStart = sMoqueeHTMLStart + " direction = \"" + sDirection + "\"";
+				
+				if(sDirection == "left" || sDirection =="right")
+				{
+					//For left and right directions seperate the headilnes by two spaces. 
+					sHeadlineTerminator = "&nbsp;&nbsp;";
+				}
+				else
+				{
+					//For down and up directions seperate headlines by new line
+					sHeadlineTerminator = "\<br/\>";
+				}
+			}
+			if(sOpenLinkLocation =="N")
+			{
+				sPostLinkLocation = " target= \"_blank\" ";
+			}
+			else
+			{
+				sPostLinkLocation = " ";
+			}
+			
+			
+			sMoqueeHTMLEnd = "\</MARQUEE\>"
+					
+			sHeadLines = "";
+			
+			for(var nFeedCounter = 0; nFeedCounter < nMaxPosts; nFeedCounter++)
+			{
+				objPost = json.feed.entry[nFeedCounter];
+               
+					  
+				for (var nCounter = 0; nCounter < objPost.link.length; nCounter++) 
+			   	{
+                	if (objPost.link[nCounter].rel == 'alternate') 
+					{
+                  		sPostURL = objPost.link[nCounter].href;
+                  		break;
+    				}
+    			}
+			   sHeadLines = sHeadLines + "\<b\>"+sBulletChar+"\</b\> \<a " + sPostLinkLocation + " href=\"" + sPostURL + "\">"  + objPost.title.$t + "\</a\>" + sHeadlineTerminator;
+			}
+			sPoweredBy = "Powered By \<a tareget =\"_blank\" href=\"http://clwolvi.blogspot.com/2008/10/display-posts-as-headlines-blogger.html\"\>Wolverine Hacks\</a\> and Translated By \<a tareget =\"_blank\" href=\"http://italib.blogspot.com\"\>œ—Ê” «·ÿ«·»\</a\>"; 
+			
+			if(sDirection == "left")
+			{
+				//
+				sHeadLines = sHeadLines + "&nbsp;";
+			}
+			else if(sDirection == "right")
+			{
+				sHeadLines = "&nbsp;" + sHeadLines ;
+			}
+			else if(sDirection == "up")
+			{
+				sHeadLines = sHeadLines + "\<br/\>" ;
+			}
+			else
+			{
+				//For down and up directions seperate headlines by new line
+				sHeadLines = "\<br/\>" +  sHeadLines;
+			}
+				
+			
+			document.write(sMoqueeHTMLStart + sHeadLines + sMoqueeHTMLEnd )
+			
+			}
+			catch(exception)
+			{
+				alert(exception);
+			}
+}
