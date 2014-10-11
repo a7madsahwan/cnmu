@@ -1,4 +1,4 @@
-// ColorBox v1.3.16 - a full featured, light-weight, customizable lightbox based on jQuery 1.3+
+﻿// ColorBox v1.3.16 - a full featured, light-weight, customizable lightbox based on jQuery 1.3+
 // Copyright (c) 2011 Jack Moore - jack@colorpowered.com
 // Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
 (function ($, document, window) {
@@ -45,7 +45,7 @@
 		onComplete: false,
 		onCleanup: false,
 		onClosed: false,
-		overlayClose: true,		
+		overlayClose: false,		
 		escKey: true,
 		arrowKey: true
 	},
