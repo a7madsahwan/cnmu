@@ -1,3 +1,4 @@
+$(document).ready(function () {
 $.ajax({
     url: ''+url_blog+'/feeds/posts/default?alt=json-in-script&max-results=' + numpostx + '',
     type: 'get',
