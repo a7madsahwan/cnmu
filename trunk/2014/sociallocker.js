@@ -24,7 +24,7 @@
     $.onepress.sociallocker.lang = {
         defaultHeader:          "This content is locked!",
         defaultMessage:         "Please support us, use one of the buttons below to unlock the content.",
-        orWait:                 'أو إنتظار إنتهاء التوقيت ',
+        orWait:                 'أو الإنتظار ',
         seconds:                ' ثانية ',   
         close:                  'Close',
         error:                  'error',  
