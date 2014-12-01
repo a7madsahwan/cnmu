@@ -128,11 +128,6 @@
     min-width: 104px;
 }
 /* facebook buttons, google buttons and tweet button always has the fixed size */
-.onp-facebook-button, 
-.onp-google-button, 
-.onp-twitter-tweet {
-    width: 104px;
-}
 .onp-sociallocker-button-overlay {
     width: 100%;
     border-bottom: none;
