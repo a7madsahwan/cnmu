@@ -170,24 +170,41 @@
 }
 
 /* facebook share button */
-.onp-facebook-share-button {
-    line-height: 1%;
-}
-.onp-sociallocker-vertical .onp-facebook-share-button span {
+
+.onp-facebook-share {
+    display: inline-block;
+    height: 18px;
+    vertical-align: top;
+    position: relative;
     top: 1px;
 }
-.onp-facebook-share-button-overlay {
+.onp-facebook-share .onp-facebook-share-icon {
+    width: 64px;
+    height: 18px;
     position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    background-color: rgba(255,255,255,0); 
     cursor: pointer;
-    z-index: 20;
+    left: 0px;
+    background: url('https://lh5.googleusercontent.com/-WJ0Qk49dHOI/VHzP2UbbCLI/AAAAAAAAFIA/tPTL75sh66k/s63/facebook-share.png') top left no-repeat; 
 }
-.onp-facebook-share-button-overlay:hover {
-    background-color: rgba(255,255,255,0.1);  
+.onp-facebook-share .onp-facebook-share-count {
+    height: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #d3d3d3;
+    background-color: #fff;
+    margin-left: 62px;
+    font-family: tahoma, sans-serif;
+    font-size: 11px;
+    line-height: 15px;
+    padding: 0 4px 0 5px;
+}
+.onp-facebook-share-count-none .onp-facebook-share-icon {
+    width: 57px;
+    position: relative;
+    display: block;
+    background: url('https://lh6.googleusercontent.com/-DaZTM2pG_eg/VHzP0SngPgI/AAAAAAAAFH4/6QSKPwSzueM/s57/facebook-share-no-counter.png') top left no-repeat; 
+}
+.onp-facebook-share-count-none .onp-facebook-share-count{
+    display: none;   
 }
 
 /* remove the popup comment box */
