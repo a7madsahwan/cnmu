@@ -58,22 +58,9 @@
 
     if (!$.onepress.sociallocker.presets) $.onepress.sociallocker.presets = {};
     
-    /* starter theme */
-
-    $.onepress.sociallocker.presets['starter'] = {
-        
-        buttons: {
-            layout: 'horizontal',
-            counter: true
-        },
-        effects: {
-            flip: false
-        }
-    };
+  /* flat theme */
     
-    /* secrets theme */
-    
-    $.onepress.sociallocker.presets['secrets'] = {
+    $.onepress.sociallocker.presets['flat'] = {
 
         buttons: {
             layout: 'horizontal',
@@ -85,8 +72,8 @@
         
         triggers: {
             overlayRender: function(options, networkName, buttonName, isTouch){
-                var overlay = isTouch ? $("<a></a>") : $("<div></div>");
-                var title = options.title || $.onepress.sociallocker.lang.socialLock[networkName + "_" + buttonName];
+                var overlay = $("<a></a>");
+                var title = options.title || $.onepress.sociallocker.lang[networkName + "_" + buttonName];
                 
                 overlay.addClass("onp-sociallocker-button-overlay") 
                       .append(
@@ -99,34 +86,6 @@
                 
                 return overlay;
             }
-        }
-    };
-    
-    /* dandyish theme */
-    
-    $.onepress.sociallocker.presets['dandyish'] = {
-
-        buttons: {
-            layout: 'vertical',
-            counter: true,
-            unsupported: ['twitter-follow']
-        },
-        effects: {
-            flip: false
-        }
-    };
-    
-    /* glass theme */
-    
-    $.onepress.sociallocker.presets['glass'] = {
-        _iPhoneBug: false,
-        
-        buttons: {
-            layout: 'horizontal',
-            counter: true
-        },
-        effects: {
-            flip: false
         }
     };
 
