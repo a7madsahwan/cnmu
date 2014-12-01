@@ -128,6 +128,11 @@
     min-width: 104px;
 }
 /* facebook buttons, google buttons and tweet button always has the fixed size */
+.onp-facebook-button, 
+.onp-google-button, 
+.onp-twitter-tweet {
+    width: 104px;
+}
 .onp-sociallocker-button-overlay {
     width: 100%;
     border-bottom: none;
@@ -203,6 +208,52 @@
 }
 
 /**
+* Helper tools (timer, close icon)
+*/
+
+.onp-sociallocker .onp-sociallocker-cross {
+    background: url('http://3.bp.blogspot.com/-u2TLiDrfJYU/U5qZaUeRbyI/AAAAAAAAAR8/DUTwy-FZ1SE/s1600/close.png') 50% 50% no-repeat;
+    width: 16px;
+    height: 16px;
+    opacity: 0.1;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=10);
+    cursor: pointer;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    z-index: 2;
+}
+.onp-sociallocker:hover .onp-sociallocker-cross {
+    opacity: 0.2;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=20);
+}
+.onp-sociallocker .onp-sociallocker-cross:hover {
+    opacity: 0.8;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+}
+.onp-sociallocker .onp-sociallocker-timer {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    z-index: 10;
+}
+.onp-sociallocker .onp-sociallocker-timer,
+.onp-sociallocker .onp-sociallocker-timer * {
+    font: normal normal 400 12px/12px sans-serif;
+    text-transform: lowercase;
+}
+.onp-sociallocker .onp-sociallocker-timer {
+    color: #000;
+    margin-left: 5px;
+}
+.onp-sociallocker .onp-sociallocker-timer-counter {
+    font-weight: bold;
+}
+.onp-google-button {
+    position: relative;
+}
+
+/**
 * Base styles of the flip effect
 */
 .onp-sociallocker-flip .onp-sociallocker-button-inner-wrap
@@ -269,124 +320,7 @@
     color: #fff;
     text-shadow: none;
 }
-/**
-* Dandyish style
-*/
 
-.onp-sociallocker-dandyish {
-    padding: 7px;
-    background: url('http://2.bp.blogspot.com/-Ew8vy6sdtDA/U5qZa2zEPNI/AAAAAAAAASE/2Qnmos4jbkc/s1600/dandysh-border.png');
-    border-radius: 12px;
-    -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-}
-.onp-sociallocker-dandyish .onp-sociallocker-outer-wrap {
-    padding: 5px;
-    background-color: #fff;
-    border-radius: 10px;
-}
-.onp-sociallocker-dandyish .onp-sociallocker-inner-wrap {
-    padding: 10px;
-    border-radius: 10px;
-    background-color: f8f8f8;
-    background: linear-gradient(top, #f9f9f9, #F5F5F5);
-    background: -o-linear-gradient(top, #f9f9f9, #F5F5F5);
-    background: -moz-linear-gradient(top, #f9f9f9, #F5F5F5);
-    background: -webkit-linear-gradient(top, #f9f9f9, #F5F5F5);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#F5F5F5',GradientType=0 );
-    background: -ms-linear-gradient(top, #FFFFFF, #F5F5F5);   
-    -moz-box-shadow: inset 0px 1px 6px rgba(0, 0, 0, 0.20);
-    -webkit-box-shadow: inset 0px 1px 6px rgba(0, 0, 0, 0.20);
-    box-shadow: inset 0px 1px 6px rgba(0, 0, 0, 0.20);
-}
-.onp-sociallocker-dandyish .onp-sociallocker-text {
-    padding: 10px 10px 0 10px;
-}
-.onp-sociallocker-dandyish .onp-sociallocker-text,
-.onp-sociallocker-dandyish  .onp-sociallocker-timer, 
-.onp-sociallocker-dandyish .onp-sociallocker-timer * {
-    -webkit-text-shadow: 1px 1px 2px #fff;
-    -moz-text-shadow: 1px 1px 2px #fff;
-    text-shadow: 1px 1px 2px #fff;
-}
-.onp-sociallocker-dandyish .onp-sociallocker-text .onp-sociallocker-strong:before,
-.onp-sociallocker-dandyish .onp-sociallocker-text .onp-sociallocker-strong:after {
-    content: '';
-    display: inline-block;
-    width: 11px;
-    height: 14px;
-    margin: 0 9px;
-    background: url('http://3.bp.blogspot.com/-zh68d9Qv_cQ/U5qZboEospI/AAAAAAAAASw/fX_SFK1bdno/s1600/lock-icon.png') 0px 2px no-repeat;
-}
-@media screen and (max-width: 500px) 
-{
-    .onp-sociallocker-dandyish .onp-sociallocker-text .onp-sociallocker-strong:before,
-    .onp-sociallocker-dandyish .onp-sociallocker-text .onp-sociallocker-strong:after 
-    {
-        display: none;
-    }
-}
-.onp-sociallocker-dandyish .onp-sociallocker-text .onp-sociallocker-strong:after {
-    margin-left: 10px;
-}
-.onp-sociallocker-dandyish .onp-sociallocker-buttons {
-    margin: 0px;
-    padding: 5px;
-}
-.onp-sociallocker-dandyish .onp-sociallocker-button {
-    border-radius: 7px;
-    background-color: rgba(255,255,255, 1);
-    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
-    -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.15);
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
-}
-.onp-sociallocker-dandyish .onp-sociallocker-button .fb-like span,
-.onp-sociallocker-dandyish .onp-sociallocker-button .fb-like iframe {
-    height: 61px;
-}
-.onp-sociallocker-dandyish .onp-sociallocker-button {
-    margin: 14px 7px 0 7px;
-    width: 85px;
-}
-.onp-sociallocker.onp-sociallocker-dandyish .onp-social-button {
-    min-width: 0px;
-    width: auto;
-}
-
-.onp-sociallocker-dandyish .onp-linkedin-button {
-    position: relative;
-}
-.onp-sociallocker-dandyish .onp-google-button {
-    position: relative;
-    top: 2px;
-}
-.onp-sociallocker-dandyish .onp-facebook-button, 
-.onp-sociallocker-dandyish .onp-google-button, 
-.onp-sociallocker-dandyish .onp-twitter-tweet {
-    width: auto;
-}
-.onp-sociallocker-dandyish .fb-like {
-    position: top;
-    top: 1px;
-}
-.onp-sociallocker-dandyish .onp-sociallocker-button-inner-wrap {
-    min-width: 85px;
-    height: 84px;
-    padding: 10px;
-    text-align: center;
-}
-.onp-sociallocker-dandyish .onp-sociallocker-cross {
-    top: 20px;
-    right: 20px;
-}
-.onp-sociallocker-dandyish .onp-sociallocker-timer {
-    right: 20px;
-    bottom: 20px;
-}
-.onp-sociallocker-dandyish .onp-sociallocker-state-loading .onp-sociallocker-button-inner-wrap { 
-    background-image: url('http://3.bp.blogspot.com/-kjieP0CoGsc/U5qZZrdYjRI/AAAAAAAAASA/UE8imLPctXM/s1600/button-loader-ffffff.gif');
-}
 /**
 * Flat style
 */
