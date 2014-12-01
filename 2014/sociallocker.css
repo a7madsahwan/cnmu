@@ -128,6 +128,11 @@
     min-width: 104px;
 }
 /* facebook buttons, google buttons and tweet button always has the fixed size */
+.onp-facebook-button, 
+.onp-google-button, 
+.onp-twitter-tweet {
+    width: 120px;
+}
 .onp-sociallocker-button-overlay {
     width: 100%;
     border-bottom: none;
@@ -370,7 +375,8 @@
     padding: 30px;
 }
 .onp-sociallocker-flat .onp-sociallocker-outer-wrap {
-    border-bottom: 4px solid #f1f1f1;
+    border: 1px solid #ddd;
+    border-bottom: 4px solid #ddd;
 }
 .onp-sociallocker-flat .onp-sociallocker-inner-wrap,
 .onp-sociallocker-flat .onp-sociallocker-outer-wrap {
