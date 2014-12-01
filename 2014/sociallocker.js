@@ -24,8 +24,8 @@
     $.onepress.sociallocker.lang = {
         defaultHeader:          "This content is locked!",
         defaultMessage:         "Please support us, use one of the buttons below to unlock the content.",
-        orWait:                 'أو انتظر انتهاء التوقيت',
-        seconds:                'ثانية',   
+        orWait:                 'أو إنتظار إنتهاء التوقيت ',
+        seconds:                ' ثانية ',   
         close:                  'Close',
         error:                  'error',  
         unableToLoadSDK:        'Unable to load SDK script for {0}. Please make sure that nothing blocks loading of social scripts in your browser. Some browser extentions (Avast, PrivDog, AdBlock etc.) can cause this issue. Turn them off and try again.',     
