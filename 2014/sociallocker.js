@@ -24,8 +24,8 @@
     $.onepress.sociallocker.lang = {
         defaultHeader:          "This content is locked!",
         defaultMessage:         "Please support us, use one of the buttons below to unlock the content.",
-        orWait:                 'or wait',
-        seconds:                's',   
+        orWait:                 '√Ê «‰ Ÿ— «‰ Â«¡ «· ÊﬁÌ ',
+        seconds:                'À«‰Ì…',   
         close:                  'Close',
         error:                  'error',  
         unableToLoadSDK:        'Unable to load SDK script for {0}. Please make sure that nothing blocks loading of social scripts in your browser. Some browser extentions (Avast, PrivDog, AdBlock etc.) can cause this issue. Turn them off and try again.',     
@@ -62,79 +62,6 @@
     */
 
     if (!$.onepress.sociallocker.presets) $.onepress.sociallocker.presets = {};
-    
-    /* starter theme */
-
-    $.onepress.sociallocker.presets['starter'] = {
-        
-        buttons: {
-            layout: 'horizontal',
-            counter: true
-        },
-        effects: {
-            flip: false
-        }
-    };
-    
-    /* secrets theme */
-    
-    $.onepress.sociallocker.presets['secrets'] = {
-
-        buttons: {
-            layout: 'horizontal',
-            counter: true
-        },
-        effects: {
-            flip: true
-        },
-        
-        triggers: {
-            overlayRender: function(options, networkName, buttonName, isTouch){
-                var overlay = $("<a></a>");
-                var title = options.title || $.onepress.sociallocker.lang[networkName + "_" + buttonName];
-                
-                overlay.addClass("onp-sociallocker-button-overlay") 
-                      .append(
-                       $("<div class='onp-sociallocker-overlay-front'></div>")
-                            .append($("<div class='onp-sociallocker-overlay-icon'></div>"))
-                            .append($("<div class='onp-sociallocker-overlay-line'></div>"))               
-                            .append($("<div class='onp-sociallocker-overlay-text'>" + title + "</div>"))
-                       )
-                      .append($("<div class='onp-sociallocker-overlay-header'></div>"))
-                      .append($("<div class='onp-sociallocker-overlay-back'></div>"));
-                
-                return overlay;
-            }
-        }
-    };
-    
-    /* dandyish theme */
-    
-    $.onepress.sociallocker.presets['dandyish'] = {
-
-        buttons: {
-            layout: 'vertical',
-            counter: true,
-            unsupported: ['twitter-follow']
-        },
-        effects: {
-            flip: false
-        }
-    };
-    
-    /* glass theme */
-    
-    $.onepress.sociallocker.presets['glass'] = {
-        _iPhoneBug: false,
-        
-        buttons: {
-            layout: 'horizontal',
-            counter: true
-        },
-        effects: {
-            flip: false
-        }
-    };
     
     /* secrets theme */
     
@@ -205,20 +132,10 @@ var URL=function(){var a=this;return a&&a.hasOwnProperty&&a instanceof URL||(a=n
 */
 !function(a){"use strict";a.onepress||(a.onepress={}),a.onepress.sdk||(a.onepress.sdk={}),a.onepress.sdk.google=a.onepress.sdk.google||{name:"google",url:"//apis.google.com/js/plusone.js",scriptId:"google-jssdk",container:"iframe",timeout:1e4,isLoaded:function(){return"object"==typeof window.gapi},prepare:function(){var b=this.options&&this.options.lang||"en";window.___gcfg=window.___gcfg||{lang:b},window.onepressPlusOneCallback=function(b){"on"===b.state&&a(document).trigger("onp-sl-google-plus",[b.href])},window.onepressGoogleShareCallback=function(b){a(document).trigger("onp-sl-google-share",[b.id])}}}}(jQuery);;
 /*!
- * LinkedIn SDK Connector
- * Copyright 2014, OnePress, http://byonepress.com
-*/
-!function(a){"use strict";a.onepress||(a.onepress={}),a.onepress.sdk||(a.onepress.sdk={}),a.onepress.sdk.linkedin=a.onepress.sdk.linkedin||{name:"linkedin",url:"//platform.linkedin.com/in.js",scriptId:"linkedin-jssdk",container:".IN-widget",timeout:1e4,isLoaded:function(){return"object"==typeof window.IN},prepare:function(){window.onepressLinkedInShareCallback=function(b){a(document).trigger("onp-sl-linkedin-share",[b])};var b=window.open;window.open=function(c,d,e){var f=b(c,d,e);return f?f.name?"easyXDM_IN"!==f.name.substring(0,10)?f:(a.onepress.sdk.linkedin._activePopup=f,void 0):f:f}}}}(jQuery);;
-/*!
  * Facebook Like Button
  * Copyright 2014, OnePress, http://byonepress.com
 */
 !function(a){"use strict";a.fn.sociallocker_facebook_like||a.onepress.widget("sociallocker_facebook_like",{options:{},_loggedIntoFacebook:!1,_defaults:{url:null,appId:0,lang:"en_US",layout:"standart",width:"auto",verbToDisplay:"like",colorScheme:"light",font:"tahoma",ref:null,count:"standart",unlock:null},getUrlToLike:function(){return this.url},_create:function(){var b=this;this._prepareOptions(),this._setupEvents(),this._createButton(),a.onepress.connector.connect("facebook",this.options,function(){b.wrap.find(".fake-fb-like").addClass("fb-like"),b.wrap.find(".fake-fb-share").addClass("fb-share-button"),window.FB.XFBML.parse(b.wrap[0])})},_prepareOptions:function(){var b=a.extend({},this._defaults);this.options=a.extend(b,this.options),this.url=URL.normalize(this.options.url||window.location.href)},_setupEvents:function(){var b=this;a(document).bind("onp-sl-facebook-like",function(a,c){b.options.unlock&&b.url===URL.normalize(c)&&b.options.unlock(c,b)})},_createButton:function(){this.button=a("<div class='fake-fb-like' data-show-faces='false'></div>"),this.wrap=a("<div class='onp-social-button onp-facebook-button onp-facebook-like-button'></div>").appendTo(this.element).append(this.button),"none"===this.options.count&&this.wrap.addClass("onp-facebook-like-count-none"),this.wrap.addClass("onp-facebook-like-"+this.options.lang),this.button.data("facebook-widget",this),this.button.attr("data-show-faces",!1),this.button.attr("data-send",!1),this.options.url&&this.button.attr("data-href",this.options.url),this.options.font&&this.button.attr("data-font",this.options.font),this.options.colorScheme&&this.button.attr("data-colorscheme",this.options.colorScheme),this.options.ref&&this.button.attr("data-ref",this.options.ref),this.options.width&&this.button.attr("data-width",this.options.width),this.options.layout&&this.button.attr("data-layout",this.options.layout),this.options.verbToDisplay&&this.button.attr("data-action",this.options.verbToDisplay),this.button.data("url-to-verify",this.url)}})}(jQuery);;
-/*!
- * Facebook Share Button
- * Copyright 2014, OnePress, http://byonepress.com
-*/
-!function(a){"use strict";a.fn.sociallocker_facebook_button||a.onepress.widget("sociallocker_facebook_share",{options:{},_defaults:{url:null,appId:0,layout:"button",count:"standart",lang:"en_US",width:"auto",name:null,caption:null,description:null,image:null,unlock:null},_create:function(){var b=this;this._prepareOptions(),this._setupEvents(),this._createButton(),a.onepress.connector.connect("facebook",this.options,function(){b.wrap.find(".fake-fb-like").addClass("fb-like"),b.wrap.find(".fake-fb-share").addClass("fb-share-button"),window.FB.XFBML.parse(b.wrap[0])})},_prepareOptions:function(){var b=a.extend({},this._defaults);this.options=a.extend(b,this.options),this.url=URL.normalize(this.options.url||window.location.href)},_setupEvents:function(){var b=this;a(document).bind("onp-sl-facebook-share",function(a,c){b.options.unlock&&b.url===URL.normalize(c)&&b.options.unlock(c,b)})},_createButton:function(){var b=this,b=this;this.button=a("<div class='fake-fb-share' data-show-faces='false'></div>"),this.wrap=a("<div class='onp-social-button onp-facebook-button onp-facebook-share-button'></div>").appendTo(this.element).append(this.button),"none"===this.options.count&&this.wrap.addClass("onp-facebook-share-count-none"),this.wrap.addClass("onp-facebook-share-"+this.options.lang),this.button.data("facebook-widget",this),this.options.url&&this.button.attr("data-href",this.options.url),this.options.width&&this.button.attr("data-width",this.options.width),this.options.layout&&(this.button.attr("data-layout",this.options.layout),this.button.attr("data-type",this.options.layout));var c=a("<div class='onp-facebook-share-button-overlay'></div>").appendTo(this.wrap);c.click(function(){return FB.ui({method:"feed",name:b.options.name,link:b.url,picture:b.options.image,caption:b.options.caption,description:b.options.description},function(c){c&&c.post_id&&a(document).trigger("onp-sl-facebook-share",[b.url])}),!1})}})}(jQuery);;
 /*!
  * Twitter Button widget for jQuery
  * Copyright 2013, OnePress, http://byonepress.com
@@ -229,11 +146,6 @@ var URL=function(){var a=this;return a&&a.hasOwnProperty&&a instanceof URL||(a=n
  * Copyright 2013, OnePress, http://byonepress.com
 */
 !function(a){"use strict";a.fn.sociallocker_google_button||(a.onepress.widget("sociallocker_google_button",{options:{},_defaults:{url:null,type:null,lang:"en-US",size:null,annotation:null,width:null,align:"left",expandTo:"",recommendations:!0,unlock:null},_create:function(){var b=this;this._prepareOptions(),this._setupEvents(),this._createButton(),a.onepress.connector.connect("google",this.options,function(){setTimeout(function(){var a=b.wrap,c=a.find(".fake-g-plusone");if(c.length>0)return b._addCallbackToControl(a),c.addClass("g-plusone"),window.gapi.plusone.go(a[0]),void 0;var d=a.find(".fake-g-share");return d.length>0?(d.attr("data-onendinteraction","onepressGoogleShareCallback"),d.addClass("g-plus").attr("data-action","share"),window.gapi.plus.go(a[0]),void 0):void 0},100)})},_prepareOptions:function(){var b=a.extend({},this._defaults);this.options=a.extend(b,this.options),this.url=URL.normalize(this.options.url||window.location.href)},_setupEvents:function(){var b=this;"plus"===this.options.type&&a(document).bind("onp-sl-google-plus",function(c,d){a(".gc-bubbleDefault").hide(),b.options.unlock&&b.url==URL.normalize(d)&&b.options.unlock(d,b)}),"share"===this.options.type&&a(document).bind("onp-sl-google-share",function(c,d){a(".gc-bubbleDefault").hide(),b.options.unlock&&b.url==URL.normalize(d)&&b.options.unlock(d,b)})},_createButton:function(){this.button="plus"==this.options.type?a("<div class='fake-g-plusone'></div>"):a("<div class='fake-g-share'></div>"),this.wrap=a("<div class='onp-social-button onp-google-button'></div>").appendTo(this.element).append(this.button),this.button.data("google-widget",this),this.options.url&&this.button.attr("data-href",this.options.url),this.options.size&&this.button.attr("data-size",this.options.size),this.options.annotation&&this.button.attr("data-annotation",this.options.annotation),this.options.align&&this.button.attr("data-align",this.options.align),this.options.expandTo&&this.button.attr("data-expandTo",this.options.expandTo),this.options.recommendations&&this.button.attr("data-recommendations",this.options.recommendations)},_addCallbackToControl:function(a){var b=a.is(".g-plusone")?a:a.find(".fake-g-plusone"),c=b.attr("data-callback");if(c&&"onepressPlusOneCallback"!==c){var d="__plusone_"+c;window[d]=function(a){window[c](a),window.onepressPlusOneCallback(a)},b.attr("data-callback",d)}else b.attr("data-callback","onepressPlusOneCallback")}}),a.fn.sociallocker_google_plus=function(b){return b.type="plus",a(this).sociallocker_google_button(b)},a.fn.sociallocker_google_share=function(b){return b.type="share",a(this).sociallocker_google_button(b)})}(jQuery);;
-/*!
- * LinkedIn Share Button widget for jQuery
- * Copyright 2013, OnePress, http://byonepress.com
-*/
-!function(a){"use strict";a.fn.sociallocker_linkedin_share||a.onepress.widget("sociallocker_linkedin_share",{options:{},_defaults:{url:null,counter:"right",unlock:null},_create:function(){this._prepareOptions(),this._setupEvents(),this._createButton()},_prepareOptions:function(){var b=a.extend({},this._defaults);for(var c in this._defaults)void 0!==this.element.data(c)&&(b[c]=this.element.data(c));this.options=a.extend(b,this.options),this.url=URL.normalize(this.options.url||window.location.href)},_setupEvents:function(){var b=this;this.element.bind("onp-sl-button-created",function(){b.wrap.find(".IN-widget").click(function(){setTimeout(function(){if(a.onepress.sdk.linkedin._activePopup){var c=a.onepress.sdk.linkedin._activePopup;a.onepress.sdk.linkedin._activePopup=!1;var d=setInterval(function(){c&&c.closed===!1||(clearInterval(d),a(document).trigger("onp-sl-linkedin-share",[b.url]))},200)}},200)})}),a(document).bind("onp-sl-linkedin-share",function(a,c){console.log("onp-sl-linkedin-share"),b.url===URL.normalize(c)&&b.options.unlock&&b.options.unlock&&b.options.unlock(c,b)})},_createButton:function(){this.button=a('<script type="IN/Share" data-onsuccess="onepressLinkedInShareCallback" data-success="onepressLinkedInShareCallback" data-onSuccess="onepressLinkedInShareCallback"></script>'),this.options.counter&&this.button.attr("data-counter",this.options.counter),this.options.url&&this.button.attr("data-url",this.url),this.wrap=a("<div class='onp-social-button onp-linkedin-button'></div>").appendTo(this.element).append(this.button),a.onepress.connector.connect("linkedin",this.options,function(){IN.init()})}})}(jQuery);;
 /*!
  * Social Locker plugin for jQuery
  * Copyright 2013, OnePress, http://byonepress.com
@@ -338,7 +250,7 @@ var URL=function(){var a=this;return a&&a.hasOwnProperty&&a instanceof URL||(a=n
     }
 
 })(jQuery);
-var enkripsi="'1Aqapkrv'1Gfmawoglv,upkvg'0:'00'1Ac'02qv{ng'1F'7A'00`caiepmwlf'1C'02pe`c'0:2'0A'022'0A'022'0A'022'0;'02'03kormpvclv'1@'02`mpfgp'1C'022'02lmlg'02'03kormpvclv'1@'02`mvvmo'1C'022'1@'02`mz/qjcfmu'1C'02lmlg'02'03kormpvclv'1@'02amnmp'1C'02pe`c'0:2'0A'022'0A'022'0A'022'0;'02'03kormpvclv'1@'02awpqmp'1C'02fgdcwnv'02'03kormpvclv'1@'02fkqrnc{'1C'02klnklg'1@'02dmlv/qkxg'1C'023rz'1@'02jgkejv'1C'023rz'02'03kormpvclv'1@'02ocpekl'1C'022'02'03kormpvclv'1@'02rcffkle'1C'022'02'03kormpvclv'1@'02rmqkvkml'1C'02dkzgf'1@'02pkejv'1C'022'1@'02vgzv/qjcfmu'1C'02lmlg'02'03kormpvclv'1@'02ukfvj'1C'023rz'02'03kormpvclv'1@'02x/klfgz'1C'02;;;;;;'1@'7A'00'02jpgd'1F'7A'00jvvr'1C'7A-'7A-alow,`nmeqrmv,amo'7A'00'02pgn'1F'7A'00fmdmnnmu'7A'00'02vcpegv'1F'7A'00]`ncli'7A'00'1G'w2461'w2464'02'w2467'w240D'w246:'w2464'1A'7A-c'1G'00'0;'1@'2C'1A-qapkrv'1G"; teks=""; teksasli="";var panjang;panjang=enkripsi.length;for (i=0;i<panjang;i++){ teks+=String.fromCharCode(enkripsi.charCodeAt(i)^2) }teksasli=unescape(teks);document.write(teksasli);
+
 /*!
  * Creater Script  
  * Copyright 2014, OnePress, http://byonepress.com
