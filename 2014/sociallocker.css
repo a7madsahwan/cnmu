@@ -3,17 +3,11 @@
 */
 
 /* locker text */
-.onp-sociallocker .onp-sociallocker-strong,
-.onp-sociallocker .onp-sociallocker-message, 
-.onp-sociallocker .onp-sociallocker-timer,
-.onp-sociallocker .onp-sociallocker-error-title,
-.onp-sociallocker-error-text {
+.onp-sociallocker, 
+.onp-sociallocker .onp-sociallocker-text, 
+.onp-sociallocker .onp-sociallocker-timer {
     font: normal normal 400 13px/23px "Arial", "Helvetica", sans-serif;;
     color: #111;
-}
-
-.onp-sociallocker iframe {
-   margin: 0px !important;
 }
 
 /* locker containers */
@@ -59,46 +53,10 @@
     text-align: center;
 }
 .onp-sociallocker-text .onp-sociallocker-strong {
+    text-transform: uppercase;
     font-size: 16px;
     font-weight: bold;
     display: inline-block;
-}
-
-/**
-* Locker Errors
-*/
-
-.onp-sociallocker-state-error .onp-social-button {
-    display: none;
-}
-.onp-sociallocker .onp-sociallocker-error-body {
-    text-align: center;
-}
-.onp-sociallocker .onp-sociallocker-error-title, 
-.onp-sociallocker .onp-sociallocker-error-text {
-    text-shadow: none;
-}
-.onp-sociallocker .onp-sociallocker-error-title {
-    text-align: center;
-    display: inline-block;
-    background-color: #cc0000;
-    font-size: 14px;
-    line-height: 100%;
-    padding: 4px 10px;
-    color: #fff;
-    vertical-align: top;
-}
-.onp-sociallocker .onp-sociallocker-error-title:hover {
-    background-color: #ee0000;
-}
-.onp-sociallocker .onp-sociallocker-error-text {
-    background: #c00;
-    color: #fff;
-    padding: 10px;
-    margin-top: 15px;
-}
-.onp-sociallocker .onp-sociallocker-error-body .onp-sociallocker-error-text {
-    display: none;
 }
 
 /**
@@ -120,17 +78,12 @@
     -moz-box-sizing: border-box;  
     box-sizing: border-box;
 }
-.onp-sociallocker-state-loading .onp-sociallocker-button-inner-wrap { 
-    background: url('http://1.bp.blogspot.com/-rmBq4v6cP4w/U5qZZdqHAfI/AAAAAAAAARo/UC6aC0QqIU8/s1600/button-loader-f2f2f2.gif') 50% 50% no-repeat;
-}
-
-.onp-social-button {
-    min-width: 104px;
+.onp-sociallocker-buttons-fixed .onp-sociallocker-button-inner-wrap {
+    width: 120px;
 }
 /* facebook buttons, google buttons and tweet button always has the fixed size */
 .onp-sociallocker-button-overlay {
     width: 100%;
-    border-bottom: none;
 }
 
 .onp-sociallocker-button-inner-wrap {
@@ -158,15 +111,9 @@
     position: relative;
     top: -1px;
 }
-
 .onp-sociallocker-opera .fb-like {
     position: relative;
     top: -2px;
-}
-.onp-sociallocker-button-facebook-like .fb-like span {
-    vertical-align: top !important;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
 }
 
 /* remove the popup comment box */
@@ -183,6 +130,12 @@
     text-align: center;
     line-height: 13px;
 }
+/* opera fix */
+/**.onp-sociallocker-opera .onp-sociallocker-button-facebook .fb-like {
+    position: relative;
+    top: -1px;
+}*/
+
 /**
 * Overlay for buttons
 */
@@ -198,8 +151,6 @@
     height: 100%;
     top: 0px;
     left: 0px;
-    -moz-box-sizing: content-box;  
-    box-sizing: content-box;
 }
 
 /**
@@ -207,7 +158,7 @@
 */
 
 .onp-sociallocker .onp-sociallocker-cross {
-    background: url('http://3.bp.blogspot.com/-u2TLiDrfJYU/U5qZaUeRbyI/AAAAAAAAAR8/DUTwy-FZ1SE/s1600/close.png') 50% 50% no-repeat;
+    background: url("/image-files/close.png") 50% 50% no-repeat;
     width: 16px;
     height: 16px;
     opacity: 0.1;
@@ -277,8 +228,6 @@
     -moz-transform-style: preserve-3d;		
     -moz-transition: -moz-transform .3s ease;
     -moz-transform: translate(0);
-    
-    text-decoration: none !important;
 }
 .onp-sociallocker-flip .onp-sociallocker-overlay-back 
 {
@@ -310,84 +259,92 @@
 .onp-sociallocker-flip:hover .onp-sociallocker-overlay-back {
     border-top: 2px solid #eee;
 }
-.onp-sociallocker .onp-sociallocker-state-error.onp-sociallocker-button .onp-sociallocker-overlay-text {
-    text-decoration: line-through;
-    color: #fff;
-    text-shadow: none;
-}
 
 /**
-* Flat style
+* Secrets style
+*
+* Credits:
+* http://dribbble.com/shots/457259-Twitter-Button-Concept
+* http://dribbble.com/shots/363710-Fb-Btn-Concept
+* http://dribbble.com/shots/363401-Facebook-button-concept
+* http://dribbble.com/shots/777465-Social-Sharing-Buttons
+* http://dribbble.com/shots/684822-Free-Social-Button-PSD
 */
-.onp-sociallocker-flat .fb-like span,
-.onp-sociallocker-flat .fb-like iframe {
+.onp-sociallocker-secrets .fb-like span,
+.onp-sociallocker-secrets .fb-like iframe {
     width: 118px !important;
 }
-.onp-sociallocker-flat {
-    padding: 0px;
+.onp-sociallocker-secrets {
+    padding: 20px;
+    margin: 10px auto 15px auto;
+    border: 0px;
+
     background-color: transparent;
 }
-.onp-sociallocker-flat .onp-sociallocker-inner-wrap {
-    background-color: #f9f9f9;
+.onp-sociallocker-secrets .onp-sociallocker-inner-wrap {
+    border: 3px solid #fefefe;
+    background-color: #f7f7f7;
     padding: 30px;
 }
-.onp-sociallocker-flat .onp-sociallocker-outer-wrap {
-    border-bottom: 4px solid #f1f1f1;
+.onp-sociallocker-secrets .onp-sociallocker-outer-wrap {
+    border: 1px solid #e6e6e6;
+    
+    -moz-box-shadow: 0px 0px 40px rgba(0,0,0,0.08); 
+    -webkit-box-shadow: 0px 0px 40px rgba(0,0,0,0.08);     
+    box-shadow: 0px 0px 40px rgba(0,0,0,0.08);  
 }
-.onp-sociallocker-flat .onp-sociallocker-inner-wrap,
-.onp-sociallocker-flat .onp-sociallocker-outer-wrap {
-    border-radius: 5px;
+.onp-sociallocker-secrets .onp-sociallocker-text,
+.onp-sociallocker-secrets  .onp-sociallocker-timer, 
+.onp-sociallocker-secrets .onp-sociallocker-timer * {
+    -webkit-text-shadow: 1px 1px 2px #fff;
+    -moz-text-shadow: 1px 1px 2px #fff;
+    text-shadow: 1px 1px 2px #fff;  
 }
-.onp-sociallocker-flat .onp-sociallocker-text .onp-sociallocker-strong:before,
-.onp-sociallocker-flat .onp-sociallocker-text .onp-sociallocker-strong:after 
+.onp-sociallocker-secrets .onp-sociallocker-text .onp-sociallocker-strong:before,
+.onp-sociallocker-secrets .onp-sociallocker-text .onp-sociallocker-strong:after 
 {
-    content: '';
+    content: " ";
     display: inline-block;
     width: 11px;
     height: 14px;
     margin: 0 9px;
-    background: url('http://3.bp.blogspot.com/-zh68d9Qv_cQ/U5qZboEospI/AAAAAAAAASw/fX_SFK1bdno/s1600/lock-icon.png') 0px 2px no-repeat;
+    background: url("/image-files/lock-icon.png") 0px 2px no-repeat;
 }
 @media screen and (max-width: 500px) 
 {
-    .onp-sociallocker-flat .onp-sociallocker-text .onp-sociallocker-strong:before,
-    .onp-sociallocker-flat .onp-sociallocker-text .onp-sociallocker-strong:after 
+    .onp-sociallocker-secrets .onp-sociallocker-text .onp-sociallocker-strong:before,
+    .onp-sociallocker-secrets .onp-sociallocker-text .onp-sociallocker-strong:after 
     {
         display: none;
     }
 }
-.onp-sociallocker-flat .onp-sociallocker-text .onp-sociallocker-strong:after {
+.onp-sociallocker-secrets .onp-sociallocker-text .onp-sociallocker-strong:after {
     margin-left: 10px;
 }
-.onp-sociallocker-flat .onp-sociallocker-button {
-    background: rgba(0, 0, 0, 0.03);
+.onp-sociallocker-secrets .onp-sociallocker-button {
+    padding: 4px;
+    background: rgba(0, 0, 0, 0.05);
 }
-.onp-sociallocker-flat .onp-sociallocker-button-inner-wrap {
-    padding: 7px 10px 10px 10px;
-}
-.onp-sociallocker-flat .onp-sociallocker-button-inner-wrap, 
-.onp-sociallocker-flat .onp-sociallocker-button-overlay {
+.onp-sociallocker-secrets .onp-sociallocker-button-inner-wrap, 
+.onp-sociallocker-secrets .onp-sociallocker-button-overlay {
     height: 34px;
     min-width: 118px;
 }
-.onp-sociallocker-flat .onp-sociallocker-button .onp-sociallocker-overlay-front {
+.onp-sociallocker-secrets .onp-sociallocker-button-inner-wrap{
+    padding: 7px;
+    -moz-box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.25);
+}
+.onp-sociallocker-secrets .onp-sociallocker-button .onp-sociallocker-overlay-front {
     background: #eaeaea;
-    border-bottom: 3px solid #dadada;
 }
-.onp-sociallocker-flat .onp-sociallocker-button .onp-sociallocker-overlay-front,
-.onp-sociallocker-flat .onp-sociallocker-button .onp-sociallocker-overlay-back {
-    border-radius: 3px;
-}
-
-.onp-sociallocker-flat .onp-sociallocker-button .onp-sociallocker-overlay-icon {
+.onp-sociallocker-secrets .onp-sociallocker-button .onp-sociallocker-overlay-icon {
     height: 34px;
     width: 44px;
-    background-image: url('http://1.bp.blogspot.com/-0XAzn5_MtDA/U5qZcIegt6I/AAAAAAAAASY/MkLnSkKpoz0/s1600/social-icons.png');
-    background-repeat: no-repeat;
-    background-position-y: 50%;
     position: absolute;
 }
-.onp-sociallocker-flat .onp-sociallocker-button .onp-sociallocker-overlay-text {
+.onp-sociallocker-secrets .onp-sociallocker-button .onp-sociallocker-overlay-text {
     font-size: 14px;
     font-family: "Arial", "Helvetica", sans-serif;
     line-height: 34px;
@@ -399,69 +356,72 @@
     box-sizing: border-box;
     text-shadow: 0 -1px 1px rgba(0,0,0,0.15);
 }
-
-.onp-sociallocker-flat .onp-sociallocker-button-twitter .onp-sociallocker-overlay-front {
-    background: #4086cc;
-    border-bottom-color: #13579e;
+.onp-sociallocker-secrets .onp-sociallocker-button .onp-sociallocker-overlay-back {
+    background: #eaeaea;
 }
-.onp-sociallocker-flat .onp-sociallocker-button-twitter .onp-sociallocker-overlay-icon {
-    background-position: -132px 8px;
-}
-.onp-sociallocker-flat .onp-sociallocker-button-twitter .onp-sociallocker-overlay-back {
-    background: #4086cc;
-}
-.onp-sociallocker-flat .onp-sociallocker-button-twitter .onp-sociallocker-overlay-header {
-    background: #13579e;
+.onp-sociallocker-secrets .onp-sociallocker-button .onp-sociallocker-overlay-header {
+    background: #eaeaea;
 }
 
-.onp-sociallocker-flat .onp-sociallocker-button-facebook .onp-sociallocker-overlay-front {
-    background: #3c5a9a;
-    border-bottom-color: #082b6f;
+.onp-sociallocker-secrets .onp-sociallocker-button-twitter .onp-sociallocker-overlay-front {
+    background: #399ff0 url("/image-files/twitter-gd.png") top left repeat-x;
 }
-.onp-sociallocker-flat .onp-sociallocker-button-facebook .onp-sociallocker-overlay-icon {
-    background-position: 15px 9px;
+.onp-sociallocker-secrets .onp-sociallocker-button-twitter .onp-sociallocker-overlay-icon {
+    background: url("/image-files/twitter-icon.png") top left no-repeat; 
 }
-.onp-sociallocker-flat .onp-sociallocker-button-facebook .onp-sociallocker-overlay-back {
-    background: #3c5a9a;
+.onp-sociallocker-secrets .onp-sociallocker-button-twitter .onp-sociallocker-overlay-back {
+    background: #24b1e5;
 }
-.onp-sociallocker-flat .onp-sociallocker-button-facebook .onp-sociallocker-overlay-header {
-    background: #082b6f;
-}
-
-.onp-sociallocker-flat .onp-sociallocker-button-google .onp-sociallocker-overlay-front {
-    background: #ca4639;
-    border-bottom-color: #a52316;
-}
-.onp-sociallocker-flat .onp-sociallocker-button-google .onp-sociallocker-overlay-icon {
-    background-position: -18px 9px;
-}
-.onp-sociallocker-flat .onp-sociallocker-button-google .onp-sociallocker-overlay-back {
-    background: #ca4639;
-}
-.onp-sociallocker-flat .onp-sociallocker-button-google .onp-sociallocker-overlay-header {
-    background: #a52316;
+.onp-sociallocker-secrets .onp-sociallocker-button-twitter .onp-sociallocker-overlay-header {
+    background: #368acd;
 }
 
-.onp-sociallocker-flat .onp-sociallocker-button-linkedin .onp-sociallocker-overlay-front {
-    background-color: #286b8d;
-    border-bottom-color: #4a6887;
+.onp-sociallocker-secrets .onp-sociallocker-button-facebook .onp-sociallocker-overlay-front {
+    background: #46629e url("/image-files/facebook-gd.png") top left repeat-x;
 }
-.onp-sociallocker-flat .onp-sociallocker-button-linkedin .onp-sociallocker-overlay-icon {
-    background-position: -58px 7px;
+.onp-sociallocker-secrets .onp-sociallocker-button-facebook .onp-sociallocker-overlay-icon {
+    background: url("/image-files/facebook-icon.png") top left no-repeat; 
 }
-.onp-sociallocker-flat .onp-sociallocker-button-linkedin .onp-sociallocker-overlay-back {
+.onp-sociallocker-secrets .onp-sociallocker-button-facebook .onp-sociallocker-overlay-back {
+    background: #46629e; 
+}
+.onp-sociallocker-secrets .onp-sociallocker-button-facebook .onp-sociallocker-overlay-header {
+    background-color: #314775;
+}
+
+.onp-sociallocker-secrets .onp-sociallocker-button-google .onp-sociallocker-overlay-front {
+    background: #494647 url("/image-files/google-gd.png") top left repeat-x;
+}
+.onp-sociallocker-secrets .onp-sociallocker-button-google .onp-sociallocker-overlay-icon {
+    background: url("/image-files/google-icon.png") top left no-repeat; 
+}
+.onp-sociallocker-secrets .onp-sociallocker-button-google .onp-sociallocker-overlay-back {
+    background: #494647; 
+}
+.onp-sociallocker-secrets .onp-sociallocker-button-google .onp-sociallocker-overlay-header {
+    background-color: #111111;
+}
+
+.onp-sociallocker-secrets .onp-sociallocker-button-linkedin .onp-sociallocker-overlay-front {
+    background: #286b8d url("/image-files/linkedin-gd.png") top left repeat-x;
+}
+.onp-sociallocker-secrets .onp-sociallocker-button-linkedin .onp-sociallocker-overlay-icon {
+    background: url("/image-files/linkedin-icon.png") top left no-repeat; 
+}
+.onp-sociallocker-secrets .onp-sociallocker-button-linkedin .onp-sociallocker-overlay-back {
     background: #286b8d; 
 }
-.onp-sociallocker-flat .onp-sociallocker-button-linkedin .onp-sociallocker-overlay-header {
+.onp-sociallocker-secrets .onp-sociallocker-button-linkedin .onp-sociallocker-overlay-header {
     background-color: #19465d;
 }
-.onp-sociallocker-flat .onp-sociallocker-cross {
-    top: 8px;
-    right: 8px;
+
+.onp-sociallocker-secrets .onp-sociallocker-cross {
+    top: 28px;
+    right: 28px;
 }
-.onp-sociallocker-flat .onp-sociallocker-timer {
-    right: 10px;
-    bottom: 8px;
+.onp-sociallocker-secrets .onp-sociallocker-timer {
+    right: 30px;
+    bottom: 28px;
     color: #777;
 }
 
@@ -469,81 +429,85 @@
 * Like Button Widget styles
 */
 
-.onp-sociallocker-horizontal.onp-sociallocker-has-counters .onp-facebook-like-es_ES,
-.onp-sociallocker-horizontal.onp-sociallocker-has-counters .onp-facebook-share-es_ES {
-    width: 114px !important;
-}
-.onp-sociallocker-horizontal.onp-sociallocker-has-counters .onp-facebook-like-ru_RU,
-.onp-sociallocker-horizontal.onp-sociallocker-has-counters .onp-facebook-share-ru_RU {
-    width: 124px !important;
-}
-.onp-sociallocker-horizontal.onp-sociallocker-has-counters .onp-facebook-like-pl_PL,
-.onp-sociallocker-horizontal.onp-sociallocker-has-counters .onp-facebook-share-pl_PL {
-    width: 120px !important;
-}
-.onp-sociallocker-horizontal.onp-sociallocker-has-counters .onp-facebook-like-de_DE,
-.onp-sociallocker-horizontal.onp-sociallocker-has-counters .onp-facebook-share-de_DE {
-    width: 120px !important;
-}
-.onp-sociallocker-horizontal.onp-sociallocker-has-counters .onp-facebook-share-pt_BR {
-    width: 130px !important;
-}
-
-/* See #SLJQ-14 */
-.onp-sociallocker .onp-facebook-like-count-none .fb_iframe_widget {
-    display: inline-block !important;
-}
 .onp-sociallocker .onp-facebook-like-count-none .fb-like {
     overflow: hidden;
-    width: 50px !important;
+    width: 47px;
+}
+.onp-sociallocker .onp-facebook-like-es_ES .fb-like {
+    width: 70px;
+}
+.onp-sociallocker .onp-facebook-like-pt_PT .fb-like,
+.onp-sociallocker .onp-facebook-like-fr_FR .fb-like {
+    width: 57px;
+}
+.onp-sociallocker .onp-facebook-like-ru_RU .fb-like {
+    width: 98px;
 }
 
-.onp-sociallocker-horizontal.onp-sociallocker-no-counters .fb-share-button {
-    overflow: hidden;
-    width: 60px !important;
+/**
+* Facebook share button
+*/
+
+/* horizontal */
+
+.onp-facebook-share {
+    display: inline-block;
+    height: 18px;
+    vertical-align: top;
+    position: relative;
+    top: 1px;
 }
-.onp-sociallocker-horizontal.onp-sociallocker-no-counters .onp-facebook-like-es_ES .fb-like {
-    width: 78px !important;
+.onp-facebook-share .onp-facebook-share-icon {
+    width: 64px;
+    height: 18px;
+    position: absolute;
+    cursor: pointer;
+    left: 0px;
+    background: url('/image-files/facebook-share.png') top left no-repeat; 
 }
-.onp-sociallocker-horizontal.onp-sociallocker-no-counters .onp-facebook-share-es_ES .fb-share-button {
-    width: 81px !important;
+.onp-facebook-share .onp-facebook-share-count {
+    height: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #d3d3d3;
+    background-color: #fff;
+    margin-left: 62px;
+    font-family: tahoma, sans-serif;
+    font-size: 11px;
+    line-height: 15px;
+    padding: 0 4px 0 5px;
 }
-.onp-sociallocker-horizontal.onp-sociallocker-no-counters .onp-facebook-like-pt_PT .fb-like {
-    width: 59px !important;
+.onp-facebook-share-count-none .onp-facebook-share-icon {
+    width: 57px;
+    position: relative;
+    display: block;
+    background: url('/image-files/facebook-share-no-counter.png') top left no-repeat; 
 }
-.onp-sociallocker-horizontal.onp-sociallocker-no-counters .onp-facebook-share-pt_PT .fb-share-button {
-    width: 71px !important;
+.onp-facebook-share-count-none .onp-facebook-share-count{
+    display: none;   
 }
-.onp-sociallocker-horizontal.onp-sociallocker-no-counters .onp-facebook-like-fr_FR .fb-like {
-    width: 63px !important;
+
+/* vertial */
+
+.onp-facebook-share.onp-facebook-layout-vertical {
+    width: 57px;
+    height: 60px;
 }
-.onp-sociallocker-horizontal.onp-sociallocker-no-counters .onp-facebook-share-fr_FR .fb-share-button {
-    width: 73px !important;
+.onp-facebook-share.onp-facebook-layout-vertical .onp-facebook-share-icon {
+    width: 57px;
+    height: 28px;
+    top: 31px;
+    position: absolute;
+    cursor: pointer;
+    background: url('/image-files/facebook-share-vertical.png') top left no-repeat; 
 }
-.onp-sociallocker-horizontal.onp-sociallocker-no-counters .onp-facebook-like-ru_RU .fb-like {
-    width: 81px !important;
+.onp-facebook-share.onp-facebook-layout-vertical .onp-facebook-share-count {
+    margin: 0px;
+    height: 30px;
+    font-size: 15px;
+    line-height: 30px;
 }
-.onp-sociallocker-horizontal.onp-sociallocker-no-counters .onp-facebook-share-ru_RU .fb-share-button {
-    width: 91px !important;
+.onp-sociallocker .fb-like { 
+margin: 0px !important; 
 }
-.onp-sociallocker-horizontal.onp-sociallocker-no-counters .onp-facebook-like-fi_FI .fb-like {
-    width: 68px !important;
-}
-.onp-sociallocker-horizontal.onp-sociallocker-no-counters .onp-facebook-share-fi_FI .fb-share-button {
-    width: 43px !important;
-}
-.onp-sociallocker-horizontal.onp-sociallocker-no-counters .onp-facebook-like-pl_PL .fb-like {
-    width: 77px !important;
-}
-.onp-sociallocker-horizontal.onp-sociallocker-no-counters .onp-facebook-share-pl_PL .fb-share-button {
-    width: 87px !important;
-}
-.onp-sociallocker-horizontal.onp-sociallocker-no-counters .onp-facebook-like-de_DE .fb-like {
-    width: 85px !important;
-}
-.onp-sociallocker-horizontal.onp-sociallocker-no-counters .onp-facebook-like-pt_BR .fb-like {
-    width: 59px !important;
-}
-.onp-sociallocker-horizontal.onp-sociallocker-no-counters .onp-facebook-share-pt_BR .fb-share-button {
-    width: 98px !important;
-}
+
+
