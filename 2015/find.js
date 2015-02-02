@@ -3,7 +3,6 @@ function findString (str) {
  if (parseInt(navigator.appVersion)<4) return;
  var strFound;
  if (window.find) {
-  // CODE FOR BROWSERS THAT SUPPORT window.find
   strFound=self.find(str);
   if (!strFound) {
    strFound=self.find(str,0,1);
@@ -23,9 +22,9 @@ function findString (str) {
   }
  }
  else if (navigator.appName=="Opera") {
-  alert ("Opera browsers not supported, sorry...")
+  alert ("معذرة المتصفح غير مدعوم ...")
   return;
  }
- if (!strFound) alert ("String '"+str+"' not found!")
+ if (!strFound) alert ("... '"+str+"' لا يوجد تطابق ")
  return;
 }
