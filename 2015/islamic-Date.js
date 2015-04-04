@@ -91,7 +91,7 @@ function writeIslamicDate(adjustment) {
   "جمادى الأول","جمادى الثاني","رجب","شعبان",
   "رمضان","شوال","ذو القعدة","ذو الحجة");
 	var iDate = kuwaiticalendar(adjustment);
-	var outputIslamicDate = <span class='hjyoum'>"wdNames[iDate[4]] +"<\/span> <span class='hjfasel'>"/"<\/span>
+	var outputIslamicDate = wdNames <span class='hjyoum'>"[iDate[4]] +"<\/span> <span class='hjfasel'>"/"<\/span>
 	<span class='hjyoumn'>"+ iDate[5] +"<\/span> <span class='hjfasel'>"/"<\/span> <span class='hjshahr'>"+ iMonthNames[iDate[6]] +"<\/span><span class='hjfasel'>"/"<\/span> <span class='hjsanah'>"+ iDate[7] +"<\/span> <span class='hjreaa'>" هـ"<\/span>;
 	return outputIslamicDate;
 }
