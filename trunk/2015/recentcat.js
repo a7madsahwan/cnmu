@@ -16,7 +16,7 @@ else var postcontent="";postdate=entry.published.$t;if(j>imgr.length-1)j=0;img[i
 
 if(i==0){ var first = 'first';  }else{ var first = ''; }
 
-var daystr=(jshowPostDate)?'<i><font color="'+jacolor+'"> - ('+day+' '+ m+' '+ y+')</font></i>':"";posttitle=(jaBold)?"<b>"+posttitle+"</b>":posttitle;var trtd='<ul class="cnmucategory"><li class="ccat '+first+'"><div class="imglink" ><a href="'+posturl+'" ><img src="'+img[i]+'" /></a> </div><div class="catinfo"><a href="'+posturl+'" >'+posttitle+'</a><p>'+removeHtmlTag(postcontent,jsummaryPost)+'...</p><a class="catmore" href="'+posturl+'" >اقرأ المزيد</a></div></li></ul>';
+var daystr=(jshowPostDate)?'<i><font color="'+jacolor+'"> - ('+day+' '+ m+' '+ y+')</font></i>':"";posttitle=(jaBold)?"<b>"+posttitle+"</b>":posttitle;var trtd='<li class="ccat '+first+'"><div class="imglink" ><a href="'+posturl+'" ><img src="'+img[i]+'" /></a> </div><div class="catinfo"><a href="'+posturl+'" >'+posttitle+'</a><p>'+removeHtmlTag(postcontent,jsummaryPost)+'...</p><a class="catmore" href="'+posturl+'" >اقرأ المزيد</a></div></li>';
 
 document.write(trtd);j++;}}
 document.write("<script src=\""+home_page+"feeds/posts/default/-/"+label+"?max-results="+numposts+"&orderby=published&alt=json-in-script&callback=showrecentposts\"><\/script>");
