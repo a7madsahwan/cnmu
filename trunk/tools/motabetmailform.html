@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+}
+#mailformeshtrk {
+  background-color: #446faa;
+  height: 280px;
+  overflow: hidden;
+  width: 300px;
+}
+#mailformeshtrk h4 {
+  color: #fff;
+  display: block;
+  font: 22px/33px tahoma;
+  margin: 20px 0 0;
+  padding: 0;
+  text-align: center;
+}
+#mailformeshtrk h5 {
+  color: #eee;
+  display: inline-block;
+  font: 15px tahoma;
+  margin: 0;
+  padding: 10px 0;
+}
+#cnfortext {
+  background-color: #eee;
+  border: 0 none;
+  color: #555;
+  font: 20px times new roman;
+  height: 40px;
+  margin: 0;
+  padding: 0 10px;
+  text-align: center;
+  width: 260px;
+}
+#cnforbu {
+  background-color: #000;
+  border: 0 none;
+  color: #fff;
+  cursor: pointer;
+  font: 20px tahoma;
+  height: 40px;
+  transition: all 0.2s ease 0s;
+  width: 100px;
+}
+#cnforbu:hover {box-shadow:0 0 4px 2px #fff;}
+</style>
+<body>
+<div id="mailformeshtrk">
+<center>
+<h4>إشترك عبر البريد الإلكتروني ليصلك جديدنا</h4>
+<h5>ستصلك رسالة على بريدك لتفعيل الخدمة</h5>
+<form id='cnfor' action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=cnmu', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>
+<input id='cnfortext' type="text" value="أكتب بريدك الإلكتروني" onfocus="if (this.value == &quot;أكتب بريدك الإلكتروني&quot;) {this.value = &quot;&quot;;}" onblur="if (this.value == &quot;&quot;) {this.value = &quot;أكتب بريدك الإلكتروني&quot;;}" name="email"/></p>
+<input id='cnforbu' type="submit" value="إشترك" />
+<input name="uri" type="hidden" value="cnmu"/>
+<input name="loc" type="hidden" value="en_US"/>
+</form>
+</center>
+</div>
+</body>
+</html>
